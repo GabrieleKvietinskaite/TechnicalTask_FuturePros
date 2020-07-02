@@ -1,4 +1,5 @@
 ﻿using System;
+using Xunit;
 
 namespace ConsoleApp5
 {
@@ -35,6 +36,19 @@ namespace ConsoleApp5
             }
 
             return result;
+        }
+    }
+
+    public class TaskTests {
+        [Fact]
+        public void PyramidHeight()
+        {
+            int height = 4;
+            var sut = Program.CreateAsciiPyramid(4);
+
+            int newLinesSymbol = sut.Split('\n').Length;
+
+            Assert.Equal(height-1, newLinesSymbol);
         }
     }
 }
